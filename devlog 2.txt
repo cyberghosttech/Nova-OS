@@ -1,0 +1,43 @@
+# NovaOS Devlog 2
+
+## Making NovaOS Functional
+
+After getting the basic desktop working, I started adding the features that would make NovaOS feel more like an operating system.
+
+The biggest thing I worked on was the window system. I wanted users to be able to open an application, move its window around, minimize it, and close it. This took some experimenting because the windows needed to stay above the desktop while also interacting correctly with the taskbar.
+
+I also added the live clock to the desktop. Instead of using a fixed time, the JavaScript updates it automatically so it shows the current time.
+
+## Applications
+
+I then started working on the main applications.
+
+### IdeaVault
+
+IdeaVault is a place where ideas can be written down. I wanted it to feel like a small built-in notes application rather than just putting text directly on the desktop.
+
+### Project Hub
+
+Project Hub was designed around my projects. The idea was to have a central place where projects could be viewed and opened.
+
+### File Explorer
+
+I also created a simple file explorer interface. It is not intended to be a real computer file system, but it gives NovaOS the feeling of having files and folders.
+
+## Personalization
+
+At this point I realized that the project still looked like a generic WebOS. I wanted it to represent me, so I added a personalized welcome screen.
+
+The welcome screen introduces the user and connects the desktop to their interests and projects. This was important because the purpose of my version of NovaOS is not just to copy the idea of an operating system in a browser. I wanted it to feel like my own workspace.
+
+## Debugging
+
+As I added more JavaScript, I started getting more small errors. Some were caused by elements not being found correctly, while others came from event listeners and window controls.
+
+I used the browser developer console to find these errors. When I got stuck, I sometimes used AI to explain an error or suggest what part of the code I should check. I still tested the changes myself and changed the code to fit my project.
+
+## What I Learned
+
+This stage taught me more about DOM manipulation, event listeners, CSS positioning, and managing multiple interactive elements.
+
+The project was starting to feel like an actual desktop environment rather than a static webpage.

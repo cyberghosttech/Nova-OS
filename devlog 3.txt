@@ -1,0 +1,49 @@
+# NovaOS Devlog 3
+
+## Final Improvements
+
+For the final stage, I focused on making NovaOS feel more complete and fixing the problems I found while testing it.
+
+I tested the different applications and checked whether the windows opened and closed properly. I also checked the draggable windows, taskbar, clock, welcome screen, and the different application interfaces.
+
+There were a few issues where buttons did not behave exactly how I expected. I went back through the JavaScript and fixed the event handling and window logic.
+
+## Making It Feel Like My Own
+
+I spent some time improving the personalization because this is one of the main parts that makes my version different.
+
+Instead of making the desktop look like a copy of an existing WebOS example, I used my own layout and organized the applications around the things I wanted to have in my workspace.
+
+The welcome screen became the main starting point for the user. From there, the desktop provides access to the different parts of NovaOS.
+
+## Testing
+
+I tested the project directly in the browser using the local files. This was useful because I could make a change, refresh the page, and immediately see whether it worked.
+
+I also used the browser console whenever something stopped working. AI was used occasionally during this process, mainly to help identify or explain coding errors. The project itself was developed and assembled by me, and I tested the suggested fixes rather than blindly adding them.
+
+## Final Result
+
+NovaOS now has:
+
+* A personalized welcome screen
+* Desktop interface
+* Taskbar
+* Live clock
+* Draggable application windows
+* IdeaVault
+* Project Hub
+* File Explorer
+* Window controls
+* Interactive JavaScript functionality
+* A standalone HTML, CSS, and JavaScript structure
+
+The project ended up being quite different from where I started. I initially wanted to make a simple web desktop, but while developing it I kept adding features that made it feel more like a personal workspace.
+
+## What I Learned
+
+The biggest thing I learned from this project was how different parts of a web application connect together. HTML creates the structure, CSS controls how everything looks, and JavaScript makes the interface interactive.
+
+I also learned that debugging is a major part of programming. A feature can look simple but still require a lot of testing to work properly.
+
+NovaOS is not meant to be a replacement for a real operating system. It is my attempt at creating a personalized operating system experience in the browser and learning more about web development while building it.

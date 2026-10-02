@@ -1,0 +1,1224 @@
+/* =========================================
+   NOVAOS
+   GLOBAL STYLES
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --accent: #8b5cf6;
+    --accent-dark: #6d28d9;
+    --background: #08080d;
+    --desktop: #101018;
+    --window: rgba(24, 24, 35, 0.94);
+    --window-solid: #181823;
+    --topbar: rgba(12, 12, 18, 0.88);
+    --text: #f7f7fb;
+    --muted: #a5a5b5;
+    --border: rgba(255, 255, 255, 0.10);
+    --shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+    --radius: 16px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   WELCOME SCREEN
+========================================= */
+
+.welcome-screen {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(139, 92, 246, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(59, 130, 246, 0.12),
+            transparent 30%
+        ),
+        #08080d;
+}
+
+.welcome-card {
+    width: min(520px, calc(100% - 40px));
+
+    padding: 55px 45px;
+
+    text-align: center;
+
+    background: rgba(22, 22, 32, 0.78);
+
+    border: 1px solid var(--border);
+
+    border-radius: 28px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(25px);
+
+    animation: welcomeAppear 0.7s ease;
+}
+
+@keyframes welcomeAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.nova-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    color: white;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 10px 30px
+        color-mix(
+            in srgb,
+            var(--accent) 30%,
+            transparent
+        );
+}
+
+.large-logo {
+    width: 76px;
+    height: 76px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 22px;
+
+    font-size: 38px;
+}
+
+.welcome-card h1 {
+    font-size: 42px;
+    letter-spacing: -1.5px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.primary-button {
+    border: none;
+
+    padding: 13px 24px;
+
+    border-radius: 10px;
+
+    background: var(--accent);
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+    background: var(--accent-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px
+        color-mix(
+            in srgb,
+            var(--accent) 30%,
+            transparent
+        );
+}
+
+.welcome-info {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 25px;
+
+    color: #777789;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+.desktop {
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            color-mix(
+                in srgb,
+                var(--accent) 10%,
+                transparent
+            ),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(30, 64, 175, 0.08),
+            transparent 30%
+        ),
+        var(--desktop);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.top-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 52px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+
+    padding: 0 15px;
+
+    background: var(--topbar);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(20px);
+
+    z-index: 5000;
+}
+
+.top-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.top-center {
+    text-align: center;
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+.top-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 12px;
+}
+
+.top-button {
+    background: transparent;
+
+    color: var(--text);
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+}
+
+.top-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.system-status {
+    color: #7dd3a8;
+}
+
+
+/* =========================================
+   DESKTOP AREA
+========================================= */
+
+.desktop-area {
+    position: absolute;
+
+    top: 52px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100% - 52px);
+
+    padding: 25px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   DESKTOP ICONS
+========================================= */
+
+.desktop-icon {
+    width: 82px;
+
+    margin-bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    border-radius: 12px;
+
+    padding: 8px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: translateY(-2px);
+}
+
+.desktop-icon-image {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid var(--border);
+}
+
+.desktop-icon span:last-child {
+    font-size: 12px;
+}
+
+
+/* =========================================
+   DOCK
+========================================= */
+
+.dock {
+    position: absolute;
+
+    bottom: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px;
+
+    background: rgba(20, 20, 29, 0.85);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(20px);
+
+    z-index: 6000;
+}
+
+.dock-button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.dock-button:hover {
+    background: rgba(255, 255, 255, 0.10);
+
+    transform: translateY(-3px);
+}
+
+.dock-divider {
+    width: 1px;
+    height: 28px;
+
+    background: var(--border);
+
+    margin: 0 3px;
+}
+
+
+/* =========================================
+   WINDOWS
+========================================= */
+
+.os-window {
+    position: absolute;
+
+    width: 620px;
+    max-width: calc(100vw - 120px);
+
+    height: 430px;
+    max-height: calc(100vh - 150px);
+
+    min-width: 320px;
+    min-height: 220px;
+
+    background: var(--window);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    backdrop-filter: blur(25px);
+
+    animation: windowOpen 0.2s ease;
+
+    z-index: 100;
+}
+
+@keyframes windowOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.os-window.active {
+    border-color:
+        color-mix(
+            in srgb,
+            var(--accent) 40%,
+            var(--border)
+        );
+}
+
+.window-header {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 10px 0 16px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border-bottom: 1px solid var(--border);
+
+    cursor: grab;
+
+    user-select: none;
+}
+
+.window-header:active {
+    cursor: grabbing;
+}
+
+.window-title {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.window-controls {
+    display: flex;
+
+    gap: 5px;
+}
+
+.window-control {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #aaaabd;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.window-control:hover {
+    background: rgba(255, 255, 255, 0.09);
+
+    color: white;
+}
+
+.window-control.close:hover {
+    background: #ef4444;
+
+    color: white;
+}
+
+.window-content {
+    width: 100%;
+    height: calc(100% - 48px);
+
+    overflow: auto;
+}
+
+
+/* =========================================
+   COMMON APP UI
+========================================= */
+
+.app-padding {
+    padding: 25px;
+}
+
+.app-heading {
+    font-size: 24px;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.5px;
+}
+
+.app-subheading {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 24px;
+}
+
+.card-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+
+    gap: 14px;
+}
+
+.app-card {
+    padding: 18px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid var(--border);
+
+    transition: 0.2s ease;
+}
+
+.app-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+
+    transform: translateY(-2px);
+}
+
+.app-card-icon {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+.app-card h3 {
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.app-card p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FILE EXPLORER
+========================================= */
+
+.file-toolbar {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 12px 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.file-toolbar button {
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: var(--text);
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.file-toolbar button:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+.file-path {
+    padding: 12px 15px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.file-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(130px, 1fr));
+
+    gap: 12px;
+
+    padding: 20px;
+}
+
+.file-item {
+    border: 1px solid transparent;
+
+    background: transparent;
+
+    color: var(--text);
+
+    padding: 18px 10px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+}
+
+.file-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    border-color: var(--border);
+}
+
+.file-icon {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+.file-name {
+    font-size: 12px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   NOTES APP
+========================================= */
+
+.notes-wrapper {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.notes-toolbar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 15px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.notes-toolbar span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.notes-actions {
+    display: flex;
+
+    gap: 7px;
+}
+
+.notes-actions button {
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: var(--text);
+
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.notes-actions button:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+#notesArea {
+    flex: 1;
+
+    width: 100%;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    padding: 22px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+#notesArea::placeholder {
+    color: #666677;
+}
+
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h3 {
+    font-size: 14px;
+
+    margin-bottom: 12px;
+}
+
+.theme-grid {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.theme-button {
+    min-width: 100px;
+
+    padding: 11px 15px;
+
+    border-radius: 9px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.theme-button:hover {
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.theme-button.selected {
+    border-color: var(--accent);
+
+    background:
+        color-mix(
+            in srgb,
+            var(--accent) 15%,
+            transparent
+        );
+}
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 13px;
+}
+
+.info-row span:last-child {
+    color: var(--muted);
+
+    text-align: right;
+}
+
+
+/* =========================================
+   ABOUT APP
+========================================= */
+
+.about-logo {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    font-size: 34px;
+}
+
+.about-version {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   START MENU
+========================================= */
+
+.start-menu {
+    position: absolute;
+
+    left: 15px;
+    bottom: 75px;
+
+    width: 300px;
+
+    background: rgba(20, 20, 30, 0.94);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(25px);
+
+    overflow: hidden;
+
+    z-index: 7000;
+
+    animation: menuAppear 0.18s ease;
+}
+
+@keyframes menuAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.start-menu-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.start-menu-header small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.start-menu-apps {
+    padding: 10px;
+}
+
+.start-menu-apps button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 11px;
+
+    margin-bottom: 4px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+.start-menu-apps button:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.start-menu-apps span {
+    width: 25px;
+
+    text-align: center;
+
+    font-size: 18px;
+}
+
+.start-menu-footer {
+    padding: 12px 18px;
+
+    color: #6e6e7e;
+
+    font-size: 10px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================================
+   SHUTDOWN
+========================================= */
+
+.shutdown-screen {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle,
+            color-mix(
+                in srgb,
+                var(--accent) 10%,
+                transparent
+            ),
+            transparent 35%
+        ),
+        #08080d;
+}
+
+.shutdown-card {
+    text-align: center;
+
+    padding: 45px;
+
+    width: min(450px, calc(100% - 40px));
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    background: rgba(20, 20, 29, 0.85);
+
+    box-shadow: var(--shadow);
+}
+
+.shutdown-card h2 {
+    margin-bottom: 10px;
+}
+
+.shutdown-card p {
+    color: var(--muted);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.20);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .welcome-card {
+        padding: 40px 25px;
+    }
+
+    .welcome-card h1 {
+        font-size: 32px;
+    }
+
+    .top-bar {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .top-center {
+        display: none;
+    }
+
+    .system-status {
+        display: none;
+    }
+
+    .os-window {
+        width: calc(100vw - 30px);
+        max-width: calc(100vw - 30px);
+
+        height: calc(100vh - 130px);
+        max-height: calc(100vh - 130px);
+
+        left: 15px !important;
+        top: 20px !important;
+    }
+
+    .dock {
+        max-width: calc(100% - 20px);
+
+        overflow-x: auto;
+    }
+
+    .start-menu {
+        left: 10px;
+
+        width: calc(100% - 20px);
+    }
+}

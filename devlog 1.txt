@@ -1,0 +1,37 @@
+# NovaOS Devlog 1
+
+## Starting the Project
+
+I started NovaOS because I wanted to make something that felt more like my own computer rather than just another normal website. The main idea was to create a web-based operating system where I could have a desktop, windows, apps, a clock, and other things that I would normally expect from a basic operating system.
+
+At first, I focused on getting the basic structure working. I created the main HTML file and then separated the styling and JavaScript into their own files. I wanted to keep the project simple enough that I could understand and change it myself.
+
+The first version was mainly focused on the desktop layout. I worked on the taskbar, desktop area, windows, and basic buttons. I also wanted the windows to be movable instead of having everything fixed in one place.
+
+## Planning
+
+The features I planned for NovaOS were:
+
+* Desktop interface
+* Taskbar
+* Live clock
+* Draggable windows
+* File Explorer
+* Project Hub
+* IdeaVault
+* Personalized welcome screen
+* Basic app launching and closing
+
+I decided to build the core desktop first and add the applications afterwards.
+
+## Problems
+
+One of the first problems was getting the different parts of the desktop to work together. Some buttons would not respond correctly, and I had a few JavaScript errors while connecting the interface to the functions.
+
+I mostly fixed these by going through my code, checking the browser console, and changing the code myself. I also used AI occasionally when I could not understand why a particular JavaScript error was happening. I used it mainly for debugging rather than having it build the whole project.
+
+## What I Learned
+
+This first stage helped me understand how HTML, CSS, and JavaScript work together. I also learned that small changes in JavaScript can affect several parts of the interface, so keeping the code organized is important.
+
+The next step was to make the desktop more functional and start adding the actual NovaOS applications.
